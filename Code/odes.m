@@ -3,7 +3,7 @@
 
 function dydt=odes(t,y)
 
-dydt=zeros(10,1);
+dydt=zeros(301,1);
 
 %%123
 %456
