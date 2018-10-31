@@ -22,3 +22,6 @@ end
 for v3=201:300
   dydt(v3)=p.k2_neg*y(v3)*y(v3-100)/(y(v3)+p.J3)-p,k2_pos*y(v3);
 end
+
+%%%%%%%%%%%%%%%%%%%%%%
+dydt(301)=p.growth*y(301);
