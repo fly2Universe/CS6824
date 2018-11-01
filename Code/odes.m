@@ -7,11 +7,9 @@ global p;
 dydt=zeros(301,1);
 
 %%Complex1 (ClpXP:CpdR)
-dydt(1)=p.k1_pos*p.clpxp*y(101)-p.k1_neg*y(1);
-for v1=2:99
-  dydt(v1)=p.k1_pos*p.clpxp*y(v1+100)-p.k1_neg*y(v1);
+for v1=1:100
+  dydt(v1)=p.k1_pos*p.clpxp*y(v1+200)-p.k1_neg*y(v1);
 end
-dydt(100)=p.k1_pos*p.clpxp*y(200)-p.k1_neg*y(100);
 
 %%CpdR_f
 for v2=101:200
@@ -24,12 +22,15 @@ for v3=201:300
 
 
 %%CpdR~P_f
-
-
+for v4=301:400
+  dydt(v4)=p.k2_neg*p.cckap*y(v4-200)/(p.cckap+p.J3)-p.k2_pos*y(v4)+p.kcpdrp_b_f*y(v4+100)-p.kcpdrp_f_b*y(v4);
+end
 
 
 %%CpdR~P_b
-
+for v5=401:500
+  dydt(v5)=p.k2_neg*p.cckap*y(v5-200)/(p.cckap+p.J3)-p.k2_pos*y(v5)+p.kcpdrp_f_b*y(v5-100)-p.kcpdrp_b_f*y(v5);
+end
 
 %%%%%%%%%%%%%%%%%%%%%%
 dydt(301)=p.growth*y(301);
