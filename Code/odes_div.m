@@ -53,7 +53,7 @@ end
 dydt(301)=p.k2_neg*p.cckap*y(101)/(p.cckap+p.J3)-p.k2_pos*y(301)+p.kcpdrp_b_f*y(401)-p.kcpdrp_f_b*y(301)...
 +p.D_cpdrp*(y(302)-y(301))/(y(501)^2);
 
-<<<<<<< HEAD
+
 for v4=302:349
   dydt(v4)=p.k2_neg*p.cckap*y(v4-200)/(p.cckap+p.J3)-p.k2_pos*y(v4)+p.kcpdrp_b_f*y(v4+100)-p.kcpdrp_f_b*y(v4)...
 +p.D_cpdrp*(y(v4+1)-2*y(v4)+y(v4-1))/(y(501)^2);
@@ -65,21 +65,6 @@ dydt(351)=p.k2_neg*p.cckap*y(101)/(p.cckap+p.J3)-p.k2_pos*y(301)+p.kcpdrp_b_f*y(
 for v4=352:399
   dydt(v4)=p.k2_neg*p.cckap*y(v4-200)/(p.cckap+p.J3)-p.k2_pos*y(v4)+p.kcpdrp_b_f*y(v4+100)-p.kcpdrp_f_b*y(v4)...
 +p.D_cpdrp*(y(v4+1)-2*y(v4)+y(v4-1))/(y(501)^2);
-=======
-for v4a=302:349
-  dydt(v4a)=p.k2_neg*p.cckap*y(v4a-200)/(p.cckap+p.J3)-p.k2_pos*y(v4a)+p.kcpdrp_b_f*y(v4a+100)-p.kcpdrp_f_b*y(v4a)...
-+p.D_cpdrp*(y(v4a+1)-2*y(v4a)+y(v4a-1))/(y(501)^2);
-end
-dydt(350)=p.k2_neg*p.cckap*y(350-200)/(p.cckap+p.J3)-p.k2_pos*y(350)+p.kcpdrp_b_f*y(350+100)-p.kcpdrp_f_b*y(400)...
-+p.D_cpdrp*(y(349)-y(350))/(y(501)^2);
-
-dydt(351)=p.k2_neg*p.cckap*y(351-200)/(p.cckap+p.J3)-p.k2_pos*y(351)+p.kcpdrp_b_f*y(451)-p.kcpdrp_f_b*y(351)...
-+p.D_cpdrp*(y(352)-y(351))/(y(501)^2);
-
-for v4b=352:399
-  dydt(v4b)=p.k2_neg*p.cckap*y(v4b-200)/(p.cckap+p.J3)-p.k2_pos*y(v4b)+p.kcpdrp_b_f*y(v4b+100)-p.kcpdrp_f_b*y(v4b)...
-+p.D_cpdrp*(y(v4b+1)-2*y(v4b)+y(v4b-1))/(y(501)^2);
->>>>>>> 197efda25edb36edf1e3c3fc267ef064749fa316
 end
 dydt(400)=p.k2_neg*p.cckap*y(200)/(p.cckap+p.J3)-p.k2_pos*y(400)+p.kcpdrp_b_f*y(500)-p.kcpdrp_f_b*y(400)...
 +p.D_cpdrp*(y(399)-y(400))/(y(501)^2);
