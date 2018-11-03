@@ -35,5 +35,6 @@ for v5=401:500
   dydt(v5)=p.k2_neg*p.cckap*y(v5-200)/(p.cckap+p.J3)-p.k2_pos*y(v5)+p.kcpdrp_f_b*y(v5-100)-p.kcpdrp_b_f*y(v5);
 end
 
+
 %%%%%%%%%%%%%%%%%%%%%%
-dydt(301)=p.growth*y(301);
+dydt(501)=p.growth*y(501);
