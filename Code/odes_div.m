@@ -1,10 +1,10 @@
-%odes.m
+%odes_div.m
 
 
-function dydt=odes(t,y)
+function dydt=odes(t,y);
 global p;
 
-dydt=zeros(501,1);
+dydt=zeros(301,1);
 
 %%Complex1 (ClpXP:CpdR)
 dydt(1)=p.k1_pos*p.clpxp*y(1+200)-p.k1_neg*y(1)+(p.D_complex1/y(501)^2)*(y(2)-y(1));
