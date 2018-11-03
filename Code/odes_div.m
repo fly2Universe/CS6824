@@ -12,6 +12,10 @@ for v1a=2:49
   dydt(v1a)=p.k1_pos*p.clpxp*y(v1a+200)-p.k1_neg*y(v1a)+(p.D_complex1/y(501)^2)*(y(v1a-1)-2*y(v1a)+y(v1a+1));
 end
 dydt(50)=p.k1_pos*p.clpxp*y(50+200)-p.k1_neg*y(1)+(p.D_complex1/y(501)^2)*(y(49)-y(50));
+dydt(51)=p.k1_pos*p.clpxp*y(51+200)-p.k1_neg*y(1)+(p.D_complex1/y(501)^2)*(y(52)-y(51));
+for v1b=52:99
+  dydt(v1b)=p.k1_pos*p.clpxp*y(v1b+200)-p.k1_neg*y(v1b)+(p.D_complex1/y(501)^2)*(y(v1b-1)-2*y(v1b)+y(v1b+1));
+end
 dydt(100)=p.k1_pos*p.clpxp*y(100+200)-p.k1_neg*y(1)+(p.D_complex1/y(501)^2)*(y(99)-y(100));
 
 %%CpdR_f 
