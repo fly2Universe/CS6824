@@ -33,9 +33,15 @@ end
 
 
 %%CpdR~P_f
-for v4=301:400
-  dydt(v4)=p.k2_neg*p.cckap*y(v4-200)/(p.cckap+p.J3)-p.k2_pos*y(v4)+p.kcpdrp_b_f*y(v4+100)-p.kcpdrp_f_b*y(v4);
+dydt(301)=p.k2_neg*p.cckap*y(101)/(p.cckap+p.J3)-p.k2_pos*y(301)+p.kcpdrp_b_f*y(401)-p.kcpdrp_f_b*y(301)...
++p.D_cpdrp*(y(302)-y(301))/(y(501)^2);
+
+for v4=302:399
+  dydt(v4)=p.k2_neg*p.cckap*y(v4-200)/(p.cckap+p.J3)-p.k2_pos*y(v4)+p.kcpdrp_b_f*y(v4+100)-p.kcpdrp_f_b*y(v4)...
++p.D_cpdrp*(y(v4+1)-2*y(v4)+y(v4-1))/(y(501)^2);
 end
+dydt(400)=p.k2_neg*p.cckap*y(200)/(p.cckap+p.J3)-p.k2_pos*y(400)+p.kcpdrp_b_f*y(500)-p.kcpdrp_f_b*y(400)...
++p.D_cpdrp*(y(399)-y(400))/(y(501)^2);
 
 
 %%CpdR~P_b
