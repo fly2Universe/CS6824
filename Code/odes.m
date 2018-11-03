@@ -1,7 +1,7 @@
 %odes.m
 
 
-function dydt=odes(t,y);
+function dydt=odes(t,y)
 global p;
 
 dydt=zeros(501,1);
