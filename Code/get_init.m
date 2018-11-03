@@ -1,0 +1,1 @@
+function initial_cond = get_init(type)
