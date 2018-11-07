@@ -7,7 +7,8 @@ y0(501) = 0.013;           % cell size
 param(0);
 %% INTEGRATION PARAMETERS
 t0 = 0;
-tf = 150;%150;        
+tf = 2000;%150;        
 [t,y]=ode15s(@odes,[t0 tf],y0);
-
+plot (t,y(:,1))
+%plot(t,y(:,501))
 initial_cond.init = y(end,:);
