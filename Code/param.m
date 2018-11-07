@@ -22,7 +22,7 @@ p.ks_cpdr=0.02;
 p.kd_cpdr=0.01;
 %%phosporylation
 p.k2_pos=0.5;
-p.k2_neg=0.8;
+p.k2_neg=0.8;%based on ratio of p/unp
 %% Diffusion parameters [units --> um^2/min]
 p.D_complex1=10;
 p.D_cpdr=100;
