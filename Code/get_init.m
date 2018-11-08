@@ -9,6 +9,6 @@ param(0);
 t0 = 0;
 tf = 200;%150;        
 [t,y]=ode23(@odes,[t0 tf],y0);
-plot (t,y(:,1))
+%plot (t,y(:,1))
 %plot(t,y(:,501))
 initial_cond.init = y(end,:);
