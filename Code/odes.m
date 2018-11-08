@@ -12,7 +12,7 @@ T=150;%period of Caulobacter
 t_d=rem(t,T); %return remainder after division t/T
 p.cckap=p1*t_d.^3 + p2*t_d.^2 + p3*t_d + p4;
 
-dydt=zeros(501,1);
+dydt=zeros(601,1);
 
 %%Complex1 (ClpXP:CpdR)
 dydt(1)=p.k1_pos*p.clpxp*y(1+200)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(2)-y(1));
