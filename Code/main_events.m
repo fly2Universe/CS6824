@@ -17,8 +17,31 @@ teout = [];
 yeout = [];
 ieout = [];
 
+while t0<tf
+    
+    [t,y,te,ye,ie]=ode15s(@odes,[t0 tf],y0,options);
+    
+    nt=length(t);
+    
+    tout=[tout;t(2:nt)];
+    yout=[yout;y(2:nt,:)];
+    teout = [teout;te];
+    yeout = [yeout;ye];
+    ieout = [ieout;ie];
+    
+    y0 = y(nt,:);
 
-
-
+    if isscalar(ie) == 0
+        ie = 0;
+    end
+    
+     t0=t(nt);
+    %enforced localization of specific species
+     
+    if t0>=tf
+        break;
+    end
+    
+    sw_to_early_pd.endpoints = yout(end,:);
 
 end
