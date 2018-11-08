@@ -59,10 +59,9 @@ for v5=401:500
 end
 %%CpdR sticky
 dydt(501:600)=0;
-%%CpdR~P sticky
-dydt(601:700)=0;
+
 %%%%%%%%%%%%%%%%%%%%%%
-dydt(701)=p.growth*y(601);
+dydt(601)=p.growth*y(601);
 %%%%
 
 %%%%%%%%%%%add model 2
