@@ -27,5 +27,5 @@ p.J3=0.5;
 %%binding
 p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=1;
-p.kcpdrp_b_f=0.1;
-p.kcpdrp_f_b=1;
+p.kcpdrp_b_f=0.5;
+p.kcpdrp_f_b=0.5;
