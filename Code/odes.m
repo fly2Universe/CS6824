@@ -15,24 +15,24 @@ p.cckap=p1*t_d.^3 + p2*t_d.^2 + p3*t_d + p4;
 dydt=zeros(501,1);
 
 %%Complex1 (ClpXP:CpdR)
-dydt(1)=p.k1_pos*p.clpxp*y(1+200)-p.k1_neg*y(1)+(p.D_complex1/y(701)^2)*(y(2)-y(1));
+dydt(1)=p.k1_pos*p.clpxp*y(1+200)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(2)-y(1));
 for v1=2:99
-  dydt(v1)=p.k1_pos*p.clpxp*y(v1+200)-p.k1_neg*y(v1)+(p.D_complex1/y(701)^2)*(y(v1-1)-2*y(v1)+y(v1+1));
+  dydt(v1)=p.k1_pos*p.clpxp*y(v1+200)-p.k1_neg*y(v1)+(p.D_complex1/y(601)^2)*(y(v1-1)-2*y(v1)+y(v1+1));
 end
-dydt(100)=p.k1_pos*p.clpxp*y(100+200)-p.k1_neg*y(1)+(p.D_complex1/y(701)^2)*(y(99)-y(100));
+dydt(100)=p.k1_pos*p.clpxp*y(100+200)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(99)-y(100));
 
 %%CpdR_f 
 dydt(101)=p.ks_cpdr*p.cckap/(p.cckap+p.J1)-p.kd_cpdr*y(101-100)*y(101)/(y(101-100)+p.J2)...
       +p.k2_pos*y(101+200)-p.k2_neg*p.cckap*y(101)/(p.cckap+p.J3)+p.kcpdr_b_f*y(101+100)-p.kcpdr_f_b*y(101)...
-      +(p.D_cpdr/y(701)^2)*(y(102)-y(101));
+      +(p.D_cpdr/y(601)^2)*(y(102)-y(101));
 for v2=102:199
   dydt(v2)=p.ks_cpdr*p.cckap/(p.cckap+p.J1)-p.kd_cpdr*y(v2-100)*y(v2)/(y(v2-100)+p.J2)...
       +p.k2_pos*y(v2+200)-p.k2_neg*p.cckap*y(v2)/(p.cckap+p.J3)+p.kcpdr_b_f*y(v2+100)-p.kcpdr_f_b*y(v2)...
-      +(p.D_cpdr/y(701)^2)*(y(v2-1)-2*y(v2)+y(v2+1));
+      +(p.D_cpdr/y(601)^2)*(y(v2-1)-2*y(v2)+y(v2+1));
 end
 dydt(200)=p.ks_cpdr*p.cckap/(p.cckap+p.J1)-p.kd_cpdr*y(200-100)*y(v2)/(y(200-100)+p.J2)...
       +p.k2_pos*y(200+200)-p.k2_neg*p.cckap*y(200)/(p.cckap+p.J3)+p.kcpdr_b_f*y(200+100)-p.kcpdr_f_b*y(200)...
-      +(p.D_cpdr/y(701)^2)*(y(199)-y(200));
+      +(p.D_cpdr/y(601)^2)*(y(199)-y(200));
 
 %%CpdR_b
 for v3=201:300
@@ -43,14 +43,14 @@ end
 
 %%CpdR~P_f
 dydt(301)=p.k2_neg*p.cckap*y(101)/(p.cckap+p.J3)-p.k2_pos*y(301)+p.kcpdrp_b_f*y(401)-p.kcpdrp_f_b*y(301)...
-+p.D_cpdrp*(y(302)-y(301))/(y(701)^2);
++p.D_cpdrp*(y(302)-y(301))/(y(601)^2);
 
 for v4=302:399
   dydt(v4)=p.k2_neg*p.cckap*y(v4-200)/(p.cckap+p.J3)-p.k2_pos*y(v4)+p.kcpdrp_b_f*y(v4+100)-p.kcpdrp_f_b*y(v4)...
-+p.D_cpdrp*(y(v4+1)-2*y(v4)+y(v4-1))/(y(701)^2);
++p.D_cpdrp*(y(v4+1)-2*y(v4)+y(v4-1))/(y(601)^2);
 end
 dydt(400)=p.k2_neg*p.cckap*y(200)/(p.cckap+p.J3)-p.k2_pos*y(400)+p.kcpdrp_b_f*y(500)-p.kcpdrp_f_b*y(400)...
-+p.D_cpdrp*(y(399)-y(400))/(y(701)^2);
++p.D_cpdrp*(y(399)-y(400))/(y(601)^2);
 
 
 %%CpdR~P_b
@@ -62,7 +62,7 @@ dydt(501:600)=0;
 %%CpdR~P sticky
 dydt(601:700)=0;
 %%%%%%%%%%%%%%%%%%%%%%
-dydt(701)=p.growth*y(701);
+dydt(701)=p.growth*y(601);
 %%%%
 
 %%%%%%%%%%%add model 2
