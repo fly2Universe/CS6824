@@ -37,12 +37,11 @@ while t0<tf
     
    
     %enforced localization Sticky CpdR
-    if ie==1
-        y0(501:600)=1;
-    elseif ie==2
-        y0(501:600)=0;
+    if (ie==1)||(ie==2)
+        y0(501:511)=1;
+        y0(512:600)=0;
     elseif ie==3
-        y0(501:600)=1;
+        y0(501:600)=0;
     end    
     
     t0=t(nt);
