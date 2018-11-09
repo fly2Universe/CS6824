@@ -35,9 +35,17 @@ while t0<tf
         ie = 0;
     end
     
-     t0=t(nt);
-    %enforced localization of specific species
-     
+   
+    %enforced localization Sticky CpdR
+    if ie==1
+        y0(501:600)=1;
+    elseif ie==2
+        y0(501:600)=0;
+    elseif ie==3
+        y0(501:600)=1;
+    end    
+    
+    t0=t(nt);
     if t0>=tf
         break;
     end
