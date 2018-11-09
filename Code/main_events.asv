@@ -77,20 +77,13 @@ CpdR(:,1:100)=yout(:,101:200)+yout(:,201:300);
 CpdR_p(:,1:100)=yout(:,301:400)+yout(:,401:500);
 
 %flip array ?
-complex1 = fliplr(complex1);
-CpdR = fliplr(CpdR);
-CpdR_p = fliplr(CpdR_p);
-
-%transpose ?
-complex1 = complex1.';
-CpdR = CpdR.';
-CpdR_p = CpdR_p.';
-M = M.';
+complex1 = fliplr(comple1);
+CpDr = fliplr(CpdR
 
 
 figure(1)
 ax1 = subplot(2,2,1);
-pcolor(tout, M, complex1)
+pcolor(tout, M, plec_kinase)
 shading interp
 colorbar
 title('ClpXP:CpdR')
@@ -99,23 +92,31 @@ label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
 
 ax2 = subplot(2,2,2);
-pcolor(tout, M, CpdR)
+pcolor(tout, M, divk_p)
 shading interp
 colorbar
 xlim([0 120])
-title('CpdR')
+title('DivK~P')
 
 ax3 = subplot(2,2,3);
-pcolor(tout, M, CpdR_p)
+pcolor(tout, M, divl_free)
 shading interp
 colorbar
 xlim([0 120])
 xlabel('time (min)')
-title('CpdR~p')
+title('active DivL')
 ylabel(label_str) 
 
+ax4 = subplot(2,2,4);
+pcolor(tout, M, ctra_p)
+shading interp
+colorbar
+xlim([0 120])
+xlabel('time (min)')
+title('CtrA~P')
 
-
+h = suptitle(initial_cond.strain);
+set(h,'interpreter','none')
 
 
 sw_to_early_pd.endpoints = yout(end,:);
