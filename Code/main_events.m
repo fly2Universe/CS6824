@@ -95,6 +95,7 @@ shading interp
 colorbar
 title('ClpXP:CpdR')
 xlim([0 120])
+xlabel('time (min)')
 label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
 
@@ -103,6 +104,9 @@ pcolor(tout, M, CpdR)
 shading interp
 colorbar
 xlim([0 120])
+xlabel('time (min)')
+label_str = strcat('cell size (',char(956),'m)');
+ylabel(label_str) 
 title('CpdR')
 
 ax3 = subplot(2,2,3);
@@ -112,6 +116,7 @@ colorbar
 xlim([0 120])
 xlabel('time (min)')
 title('CpdR~p')
+label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
 
 
