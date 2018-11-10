@@ -8,7 +8,7 @@ p1 =  -3.491e-06;
 p2 =   0.0007817;
 p3 =    -0.04119 ;
 p4 =      0.7378;
-T=150;%period of Caulobacter
+T=120;%period of Caulobacter
 t_d=rem(t,T); %return remainder after division t/T
 p.cckap=p1*t_d.^3 + p2*t_d.^2 + p3*t_d + p4;
 
