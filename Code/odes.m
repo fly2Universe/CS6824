@@ -69,15 +69,18 @@ dydt(200)=p.ks_cpdr*p.J1/(y(200-100)+p.J1)-p.kd_cpdr*y(200-100)*y(v2)/(y(200-100
       +p.k2_pos*y(200+200)*p.divkp_free/(p.divkp_free+p.J3)-p.k2_neg*y(200)+p.kcpdr_b_f*y(200+100)-p.kcpdr_f_b*y(200)...
       +(p.D_cpdr/y(601)^2)*(y(199)-y(200));
 %%CpdR_b
-% for v3=201:300
-%   dydt(v3)=-p.kd_cpdr*y(v3-200)*y(v3)/(y(v3-200)+p.J2)+p.kcpdr_f_b*y(v3+300)*y(v3-100)-p.kcpdr_b_f*y(v3)...
-%       +p.k2_pos*y(v3+200)-p.k2_neg*p.cckap*y(v3)/(p.cckap+p.J3)+p.k1_neg*y(v3-200)-p.k1_pos*y(v3)*p.clpxp;
-% end
 for v3=201:300
-  dydt(v3)=-p.kd_cpdr*y(v3-200)*y(v3)/(y(v3-200)+p.J2)+p.kcpdr_f_b*y(v3+300)*y(v3-100)-p.kcpdr_b_f*y(v3)...+p.k2_pos*y(v3+200)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)-p.k2_neg*y(v3)
-      +p.k1_neg*y(v3-200)-p.k1_pos*y(v3)*p.clpxp;
+  dydt(v3)=-p.kd_cpdr*y(v3-200)*y(v3)/(y(v3-200)+p.J2)+p.kcpdr_f_b*y(v3+300)*y(v3-100)-p.kcpdr_b_f*y(v3)...
+  +p.k2_pos*y(v3+200)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)-p.k2_neg*y(v3)+p.k1_neg*y(v3-200)-p.k1_pos*p.clpxp*y(v3)/(y(v3)+p.km1);
 end
-
+% for v3a=201:211
+%   dydt(v3a)=-p.kd_cpdr*y(v3a-200)*y(v3a)/(y(v3a-200)+p.J2)+p.kcpdr_f_b*y(v3a+300)*y(v3a-100)-p.kcpdr_b_f*y(v3a)...
+%       +p.k2_pos*y(v3a+200)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)-p.k2_neg*y(v3a) +p.k1_neg*y(v3a-200)-p.k1_pos*p.clpxp*y(v3a)/(y(v3a)+p.km1);
+% end
+% for v3b=212:300
+%   dydt(v3b)=-p.kd_cpdr*y(v3b-200)*y(v3b)/(y(v3b-200)+p.J2)+p.kcpdr_f_b*y(v3b+300)*y(v3b-100)-p.kcpdr_b_f*y(v3b)+p.k2_pos*y(v3b+200)-p.k2_neg*y(v3b)...
+%       +p.k1_neg*y(v3b-200)-p.k1_pos*p.clpxp*y(v3b)/(y(v3b)+p.km1);
+% end
 %%CpdR~P_f
 % dydt(301)=p.k2_neg*p.cckap*y(101)/(p.cckap+p.J3)-p.k2_pos*y(301)+p.kcpdrp_b_f*y(401)-p.kcpdrp_f_b*y(301)...
 % +p.D_cpdrp*(y(302)-y(301))/(y(601)^2);
@@ -104,9 +107,14 @@ dydt(400)=p.k2_neg*y(200)-p.k2_pos*y(400)*p.divkp_free/(p.divkp_free+p.J3)+p.kcp
 % end
 %%%%divk
 for v5=401:500
-dydt(v5)=...p.k2_neg*y(v5-200)-p.k2_pos*y(v5)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)+
-    p.kcpdrp_f_b*y(v5-100)-p.kcpdrp_b_f*y(v5);
+dydt(v5)=p.k2_neg*y(v5-200)-p.k2_pos*y(v5)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)+ p.kcpdrp_f_b*y(v5-100)-p.kcpdrp_b_f*y(v5);
 end
+% for v5a=401:411
+% dydt(v5a)=p.k2_neg*y(v5a-200)-p.k2_pos*y(v5a)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)+p.kcpdrp_f_b*y(v5a-100)-p.kcpdrp_b_f*y(v5a);
+% end
+% for v5b=412:500
+% dydt(v5b)=p.k2_neg*y(v5b-200)-p.k2_pos*y(v5b)+p.kcpdrp_f_b*y(v5b-100)-p.kcpdrp_b_f*y(v5b);
+% end
 %%CpdR sticky
 dydt(501:600)=0;
 
