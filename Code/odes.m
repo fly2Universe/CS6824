@@ -26,11 +26,11 @@ p1 =   1.315e-06 ;
 dydt=zeros(601,1);
 
 %%Complex1 (ClpXP:CpdR)
-dydt(1)=p.k1_pos*p.clpxp*y(1+200)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(2)-y(1));
+dydt(1)=p.k1_pos*p.clpxp*y(1+200)/(y(201)+p.km1)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(2)-y(1));
 for v1=2:99
-  dydt(v1)=p.k1_pos*p.clpxp*y(v1+200)-p.k1_neg*y(v1)+(p.D_complex1/y(601)^2)*(y(v1-1)-2*y(v1)+y(v1+1));
+  dydt(v1)=p.k1_pos*p.clpxp*y(v1+200)/(y(v1+200)+p.km1)-p.k1_neg*y(v1)+(p.D_complex1/y(601)^2)*(y(v1-1)-2*y(v1)+y(v1+1));
 end
-dydt(100)=p.k1_pos*p.clpxp*y(100+200)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(99)-y(100));
+dydt(100)=p.k1_pos*p.clpxp*y(100+200)/(y(300)+p.km1)-p.k1_neg*y(1)+(p.D_complex1/y(601)^2)*(y(99)-y(100));
 
 %%CpdR_f 
 % dydt(101)=p.ks_cpdr*p.cckap/(p.cckap+p.J1)-p.kd_cpdr*y(101-100)*y(101)/(y(101-100)+p.J2)...
