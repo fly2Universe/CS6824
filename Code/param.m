@@ -25,6 +25,7 @@ p.J1=10;
 p.J2=0.5;
 p.J3=0.5;%%0.5;
 p.J4=0.4;
+p.km1=0.1;
 %%binding
 p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=2;
