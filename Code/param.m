@@ -17,7 +17,7 @@ p.kd_cpdr=1;%0.01;
 p.k2_pos=2;%0.5;
 p.k2_neg=8;%0.8;%based on ratio of p/unp
 %% Diffusion parameters [units --> um^2/min]
-p.D_complex1=10;
+p.D_complex1=1;
 p.D_cpdr=100;
 p.D_cpdrp=100;
 %%
