@@ -73,7 +73,7 @@ M=100*M;
 complex1(:,1:100)=yout(:,1:100);
 %free+bound CpdR
 CpdR(:,1:100)=yout(:,101:200)+yout(:,201:300);
-%free+bound CpdR~p
+%CpdR~p
 CpdR_p(:,1:100)=yout(:,301:400);
 
 %flip array ?
