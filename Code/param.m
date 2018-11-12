@@ -5,7 +5,7 @@ if cond == 0
 else p.growth = 0.0055;
 end
 %%extra constant or function
-p.clpxp=0.05;%um
+p.clpxp=0.5;%um
 
 
 %% Synthesis and degradation rate constants [units --> 1/min]
@@ -25,7 +25,7 @@ p.J1=10;
 p.J2=0.5;
 p.J3=0.5;%%0.5;
 p.J4=0.4;
-p.km1=0.1;
+p.km1=10;
 %%binding
 p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=2;
