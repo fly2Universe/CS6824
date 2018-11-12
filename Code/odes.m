@@ -68,7 +68,19 @@ end
 %%CpdR sticky
 dydt(401:500)=0;
 %%%%%%%%%%%add model 2
-%%after uncomment, should change total amount to 701
+%%before uncomment, should change total amount to 701
+% %complex2. 
+%     dydt(501)=p.k3_pos*y(501-500)*y(501+100)-p.k3_neg*y(501)+p.D_complex2*(y(501+1)-y(501))/(y(701)^2);
+% for v5=502:599
+%     dydt(v5)=p.k3_pos*y(v5-500)*y(v5+100)-p.k3_neg*y(v5)+p.D_complex2*(y(v5+1)-2*y(v5)+y(v5-1))/(y(701)^2);
+% end
+%     dydt(600)=p.k3_pos*y(600-500)*y(600+100)-p.k3_neg*y(600)+p.D_complex2*(y(600-1)-y(600))/(y(701)^2);
+% %RcdA
+%     dydt(601)=p.ks_rcda*y(601)^2/(y(601)^2+p.J5^2)-p.kd_rcda*y(601)+p.D_rcda*(y(601+1)-y(601))/(y(701)^2);
+% for v6=602:699
+%     dydt(v6)=p.ks_rcda*y(v6)^2/(y(v6)^2+p.J5^2)-p.kd_rcda*y(v6)+p.D_rcda*(y(v6+1)-2*y(v6)+y(v6-1))/(y(701)^2);
+% end
+%     dydt(700)=p.ks_rcda*y(700)^2/(y(700)^2+p.J5^2)-p.kd_rcda*y(700)+p.D_complex2*(y(700-1)-y(700))/(y(701)^2);
 
 %%%%%%%%%%%%%%%%%%%%%%
 dydt(501)=p.growth*y(501);
