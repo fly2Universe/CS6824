@@ -67,9 +67,11 @@ end
 
 %%CpdR sticky
 dydt(401:500)=0;
+%%%%%%%%%%%add model 2
+%%after uncomment, should change total amount to 701
 
 %%%%%%%%%%%%%%%%%%%%%%
 dydt(501)=p.growth*y(501);
 %%%%
 
-%%%%%%%%%%%add model 2
+
