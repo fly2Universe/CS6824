@@ -20,6 +20,8 @@ p.k2_neg=8;%0.8;%based on ratio of p/unp
 p.D_complex1=1;
 p.D_cpdr=100;
 p.D_cpdrp=100;
+p.D_complex2=1;
+p.D_rcda=100;
 %%
 p.J1=10;
 p.J2=0.5;
