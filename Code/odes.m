@@ -51,7 +51,12 @@ for v3=201:300
   +p.k2_pos*y(v3+100)*p.divkp_oldpole/(p.divkp_oldpole+p.J4)-p.k2_neg*y(v3)...
   +p.k1_neg*y(v3-200)-p.k1_pos*p.clpxp*y(v3)/(y(v3)+p.km1);
 end
-
+% for v33=212:300
+%   dydt(v33)=-p.kd_cpdr*y(v33-200)*y(v33)/(y(v33-200)+p.J2)...
+%       +p.kcpdr_f_b*y(v33+200)*y(v33-100)-p.kcpdr_b_f*y(v33)...
+%   +p.k2_pos*y(v33+100)-p.k2_neg*y(v33)...
+%   +p.k1_neg*y(v33-200)-p.k1_pos*p.clpxp*y(v33)/(y(v33)+p.km1);
+% end
 %%%%%%%%CpdR~P
 
 
