@@ -58,8 +58,6 @@ end
 %   +p.k1_neg*y(v33-200)-p.k1_pos*p.clpxp*y(v33)/(y(v33)+p.km1);
 % end
 %%%%%%%%CpdR~P
-
-
 dydt(301)=p.k2_neg*(y(101)+y(201))-p.k2_pos*y(301)*(p.divkp_free/(p.divkp_free+p.J3)+p.divkp_oldpole/(p.divkp_oldpole+p.J4))...
 +p.D_cpdrp*(y(302)-y(301))/(y(701)^2);
 
@@ -81,11 +79,11 @@ for v5=502:599
 end
     dydt(600)=p.k3_pos*y(600-500)*y(600+100)-p.k3_neg*y(600)+p.D_complex2*(y(600-1)-y(600))/(y(701)^2);
 %RcdA
-    dydt(601)=p.ks_rcda*y(601)^2/(y(601)^2+p.J5^2)-p.kd_rcda*y(601)+p.D_rcda*(y(601+1)-y(601))/(y(701)^2);
+    dydt(601)=p.ks_rcda*y(601)^2/(y(601)^2+p.J5^2)-p.kd_rcda*y(601)*y(601-600)/(y(601-600)+p.J6)+p.D_rcda*(y(601+1)-y(601))/(y(701)^2);
 for v6=602:699
-    dydt(v6)=p.ks_rcda*y(v6)^2/(y(v6)^2+p.J5^2)-p.kd_rcda*y(v6)+p.D_rcda*(y(v6+1)-2*y(v6)+y(v6-1))/(y(701)^2);
+    dydt(v6)=p.ks_rcda*y(v6)^2/(y(v6)^2+p.J5^2)-p.kd_rcda*y(v6)*y(v6-600)/(y(v6-600)+p.J6)+p.D_rcda*(y(v6+1)-2*y(v6)+y(v6-1))/(y(701)^2);
 end
-    dydt(700)=p.ks_rcda*y(700)^2/(y(700)^2+p.J5^2)-p.kd_rcda*y(700)+p.D_complex2*(y(700-1)-y(700))/(y(701)^2);
+    dydt(700)=p.ks_rcda*y(700)^2/(y(700)^2+p.J5^2)-p.kd_rcda*y(700)*y(700-600)/(y(700-600)+p.J6)+p.D_complex2*(y(700-1)-y(700))/(y(701)^2);
 
 %%%%%%%%%%%%%%%%%%%%%%
 dydt(701)=p.growth*y(701);
