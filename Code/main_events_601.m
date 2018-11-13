@@ -22,7 +22,7 @@ ieout = [];
 %event
 while t0<tf
     %solve system, integration is stopped when a specific event happens
-    [t,y,te,ye,ie]=ode15s(@odes,[t0 tf],y0,options);
+    [t,y,te,ye,ie]=ode15s(@odes_1,[t0 tf],y0,options);
     %number of points calculated
     nt=length(t);
     %the time points and correspoding values calculated before the event
@@ -44,10 +44,10 @@ while t0<tf
    
     %enforced localization Sticky CpdR
     if (ie==1)||(ie==2)
-        y0(401:411)=1;
-        y0(412:500)=0;
+        y0(501:511)=1;
+        y0(512:600)=0;
     elseif ie==3
-        y0(401:500)=0;
+        y0(501:600)=0;
     end    
     
     t0=t(nt);
@@ -58,7 +58,7 @@ end
 % Define Grid M for plot
 % The plot is basically a heat map of the concentration of the species along the main axis of the cell
 for n=51:100
-    M(:,n)=yout(:,501)*(n/100)-0.5*(yout(:,501)*(.5) + yout(:,501)*.51); 
+    M(:,n)=yout(:,601)*(n/100)-0.5*(yout(:,601)*(.5) + yout(:,601)*.51); 
     % Each element from column 51 to 100 is assigned the 'n'th fraction of 
     %total cell length at a given time step followed by subtracting the mid 
     %point value so that the centre of the grid takes the value 0
@@ -73,8 +73,8 @@ M=100*M;
 complex1(:,1:100)=yout(:,1:100);
 %free+bound CpdR
 CpdR(:,1:100)=yout(:,101:200)+yout(:,201:300);
-%CpdR~p
-CpdR_p(:,1:100)=yout(:,301:400);
+%free+bound CpdR~p
+CpdR_p(:,1:100)=yout(:,301:400)+yout(:,401:500);
 
 %flip array ?
 complex1 = fliplr(complex1);
