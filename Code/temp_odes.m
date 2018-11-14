@@ -58,6 +58,7 @@ dydt(5)=p.k3_pos*y(1)*y(6)-p.k3_neg*y(5);
 
 %dydt(5)=p.k3_pos*y(1)*p.rcda-p.k3_neg*y(5);
 %RcdA
+%  dydt(6)=p.ks_rcda*y(6)^2/(y(6)^2+p.J5^2)-p.kd_rcda*y(6)*y(1)/(y(1)+p.J6);
  dydt(6)=p.ks_rcda*y(6)^2/(y(6)^2+p.J5^2)-p.kd_rcda*y(6)*y(1)/(y(1)+p.J6);
 
 
