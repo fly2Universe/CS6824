@@ -6,7 +6,7 @@ global p
 param(1); %cell can grow
 
 
-[T,Y] = ode15s('temp_odes',[0,500],[2,1,4,1,1,1]);
+[T,Y] = ode15s('temp_odes',[0,500],[2,1,4,1,1]);
 figure(100);
 subplot(3,1,1);
 plot(T,Y(:,1),'g');
