@@ -94,34 +94,34 @@ complex2 = complex2.';
 M = M.';
 
 
-% figure(1)
-% ax1 = subplot(2,2,1);
-% pcolor(tout, M, complex1)
-% shading interp
-% colorbar
-% title('ClpXP:CpdR')
-% xlim([0 120])
-% xlabel('time (min)')
-% label_str = strcat('cell size (',char(956),'m)');
-% ylabel(label_str) 
-% 
-% ax2 = subplot(2,2,2);
-% pcolor(tout, M, CpdR)
-% shading interp
-% colorbar
-% xlim([0 120])
-% xlabel('time (min)')
-% label_str = strcat('cell size (',char(956),'m)');
-% ylabel(label_str) 
-% title('CpdR')
-% 
-% ax3 = subplot(2,2,3);
-% pcolor(tout, M, CpdR_p)
-% shading interp
-% colorbar
-% xlim([0 120])
-% xlabel('time (min)')
-% title('CpdR~p')
+figure(1)
+ax1 = subplot(2,2,1);
+pcolor(tout, M, complex1)
+shading interp
+colorbar
+title('ClpXP:CpdR')
+xlim([0 120])
+xlabel('time (min)')
+label_str = strcat('cell size (',char(956),'m)');
+ylabel(label_str) 
+
+ax2 = subplot(2,2,2);
+pcolor(tout, M, CpdR)
+shading interp
+colorbar
+xlim([0 120])
+xlabel('time (min)')
+label_str = strcat('cell size (',char(956),'m)');
+ylabel(label_str) 
+title('CpdR')
+
+ax3 = subplot(2,2,3);
+pcolor(tout, M, CpdR_p)
+shading interp
+colorbar
+xlim([0 120])
+xlabel('time (min)')
+title('CpdR~p')
 
 figure(2)
 % ax4 = subplot(2,2,1);
