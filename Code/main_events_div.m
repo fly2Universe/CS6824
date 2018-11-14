@@ -21,7 +21,7 @@ options = odeset('RelTol',1e-4,'AbsTol',1e-4);
 % Define Grid M for plot
 % The plot is basically a heat map of the concentration of the species along the main axis of the cell
 for n=51:100
-    M(:,n)=yout(:,501)*(n/100)-0.5*(yout(:,501)*(.5) + yout(:,501)*.51); 
+    M(:,n)=yout(:,601)*(n/100)-0.5*(yout(:,601)*(.5) + yout(:,601)*.51); 
     % Each element from column 51 to 100 is assigned the 'n'th fraction of 
     %total cell length at a given time step followed by subtracting the mid 
     %point value so that the centre of the grid takes the value 0
