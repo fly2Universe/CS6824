@@ -58,7 +58,7 @@ end
 % Define Grid M for plot
 % The plot is basically a heat map of the concentration of the species along the main axis of the cell
 for n=51:100
-    M(:,n)=yout(:,701)*(n/100)-0.5*(yout(:,701)*(.5) + yout(:,701)*.51); 
+    M(:,n)=yout(:,601)*(n/100)-0.5*(yout(:,601)*(.5) + yout(:,601)*.51); 
     % Each element from column 51 to 100 is assigned the 'n'th fraction of 
     %total cell length at a given time step followed by subtracting the mid 
     %point value so that the centre of the grid takes the value 0
@@ -77,20 +77,20 @@ CpdR(:,1:100)=yout(:,101:200)+yout(:,201:300);
 CpdR_p(:,1:100)=yout(:,301:400);
 %complex2
 complex2(:,1:100)=yout(:,501:600);
-%RcdA
-RcdA(:,1:100)=yout(:,601:700);
+% %RcdA
+% RcdA(:,1:100)=yout(:,601:700);
 %flip array ?
 complex1 = fliplr(complex1);
 CpdR = fliplr(CpdR);
 CpdR_p = fliplr(CpdR_p);
 complex2 = fliplr(complex2);
-RcdA = fliplr(RcdA);
+% RcdA = fliplr(RcdA);
 %transpose ?
 complex1 = complex1.';
 CpdR = CpdR.';
 CpdR_p = CpdR_p.';
 complex2 = complex2.';
-RcdA=RcdA.';
+% RcdA=RcdA.';
 M = M.';
 
 
@@ -124,7 +124,7 @@ M = M.';
 % title('CpdR~p')
 
 figure(2)
-ax4 = subplot(2,2,1);
+% ax4 = subplot(2,2,1);
 pcolor(tout, M, complex2)
 shading interp
 colorbar
@@ -132,13 +132,13 @@ xlim([0 120])
 xlabel('time (min)')
 title('complex2')
 
-ax5 = subplot(2,2,2);
-pcolor(tout, M, RcdA)
-shading interp
-colorbar
-xlim([0 120])
-xlabel('time (min)')
-title('RcdA')
+% ax5 = subplot(2,2,2);
+% pcolor(tout, M, RcdA)
+% shading interp
+% colorbar
+% xlim([0 120])
+% xlabel('time (min)')
+% title('RcdA')
 
 label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
