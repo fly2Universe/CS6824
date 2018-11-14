@@ -46,6 +46,8 @@ dydt(2)=p.ks_cpdr-p.kd_cpdr*y(1)*y(2)/(y(1)+p.J2)+p.k2_pos*y(4)*p.divkp_free/(p.
  % dydt(3)=p.k2_neg*y(2)-p.k2_pos*y(3)*p.divkp_120/(p.divkp_120+p.J3);
 
 %%%%%%%%%%%add model 2
+dydt(5)=p.k3_pos*y(1)*y(6)-p.k3_neg*y(5);
+dydt(6)=p.ks_rcda*y(6)^2/(y(6)^2+p.J5)-p.kd_rcda*y(6)*y(1)/(y(1)+p.J6);
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%
 dydt=dydt';
