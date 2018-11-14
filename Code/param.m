@@ -5,13 +5,13 @@ if cond == 0
 else p.growth = 0.0055;
 end
 %%extra constant or function
-p.clpxp=0.5;%um
+p.clpxp=0.01;%um
 
 
 %% Synthesis and degradation rate constants [units --> 1/min]
-p.k1_pos=2; %forward reaction: ClpXP+CpdR ->Complex1
-p.k1_neg=15; %backward reaction: Complex1->ClpXP+CpdR
-p.ks_cpdr=2;%0.02;
+p.k1_pos=0.5; %forward reaction: ClpXP+CpdR ->Complex1
+p.k1_neg=20; %backward reaction: Complex1->ClpXP+CpdR
+p.ks_cpdr=0.02;%0.02;
 p.kd_cpdr=1;%0.01;
 %%phosporylation
 p.k2_pos=2;%0.5;
@@ -32,7 +32,7 @@ p.J1=10;
 p.J2=0.5;
 p.J3=0.5;%%0.5;
 p.J4=0.4;
-p.km1=30;
+p.km1=5;
 p.J5=0.5;
 p.J6=2;
 %%binding
