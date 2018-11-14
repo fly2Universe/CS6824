@@ -16,6 +16,11 @@ p.kd_cpdr=1;%0.01;
 %%phosporylation
 p.k2_pos=2;%0.5;
 p.k2_neg=8;%0.8;%based on ratio of p/unp
+%%
+p.k3_pos=20;%forward reaction: complex1+RcdA ->Complex1
+p.k3_neg=0.2;%backward reaction: complex1+RcdA
+p.ks_rcda=2.5;%0.023;
+p.kd_rcda=2;%0.017;%from Tyson lab
 %% Diffusion parameters [units --> um^2/min]
 p.D_complex1=1;
 p.D_cpdr=100;
@@ -28,6 +33,8 @@ p.J2=0.5;
 p.J3=0.5;%%0.5;
 p.J4=0.4;
 p.km1=3;
+p.J5=0.5;
+p.J6=2;
 %%binding
 p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=5;

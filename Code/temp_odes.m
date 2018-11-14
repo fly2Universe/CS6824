@@ -27,6 +27,13 @@ p1 =   1.315e-06 ;
 %        c1 =     0.07546;
 %        d1=      0.9291 ;
 % p.divkp_120=a1*sin(3*pi*t_d./180+c1)+d1;
+%RcdA
+ q1 =  -8.725e-08 ;
+       q2 =   2.948e-05 ;
+       q3 =   -0.003332  ;
+       q4 =      0.1384 ;
+       q5 =     -0.8569;
+       p.rcda=q1*t_d.^4 + q2*t_d.^3 + q3*t_d.^2 + q4*t_d+ q5;
 %%Complex1 (ClpXP:CpdR)
   dydt(1)=p.k1_pos*p.clpxp*y(3)/(y(3)+p.km1)-p.k1_neg*y(1);
 
@@ -46,6 +53,13 @@ dydt(2)=p.ks_cpdr-p.kd_cpdr*y(1)*y(2)/(y(1)+p.J2)+p.k2_pos*y(4)*p.divkp_free/(p.
  % dydt(3)=p.k2_neg*y(2)-p.k2_pos*y(3)*p.divkp_120/(p.divkp_120+p.J3);
 
 %%%%%%%%%%%add model 2
+%complex2
+%dydt(5)=p.k3_pos*y(1)*y(6)-p.k3_neg*y(5);
+
+dydt(5)=p.k3_pos*y(1)*p.rcda-p.k3_neg*y(5);
+% %RcdA
+% dydt(6)=p.ks_rcda*y(6)^2/(y(6)^2+p.J5)-p.kd_rcda*y(6)*y(1)/(y(1)+p.J6);
+
 %%%%%%%%%%%%%%%%%%%%%%
 %%%%
 dydt=dydt';
