@@ -38,16 +38,20 @@ complex1(:,1:100)=yout(:,1:100);
 CpdR(:,1:100)=yout(:,101:200)+yout(:,201:300);
 %CpdR~p
 CpdR_p(:,1:100)=yout(:,301:400);
+%complex2
+complex2(:,1:100)=yout(:,501:600);
 
 %flip array ?
 complex1 = fliplr(complex1);
 CpdR = fliplr(CpdR);
 CpdR_p = fliplr(CpdR_p);
+complex2 = fliplr(complex2);
 
 %transpose ?
 complex1 = complex1.';
 CpdR = CpdR.';
 CpdR_p = CpdR_p.';
+complex2 = complex2.';
 M = M.';
 
 
@@ -79,6 +83,22 @@ colorbar
 xlim([120 150])
 xlabel('time (min)')
 title('CpdR~p')
+figure(2)
+% ax4 = subplot(2,2,1);
+pcolor(tout, M, complex2)
+shading interp
+colorbar
+xlim([0 120])
+xlabel('time (min)')
+title('complex2')
+
+ax5 = subplot(2,2,2);
+pcolor(tout, M, RcdA)
+shading interp
+colorbar
+xlim([0 120])
+xlabel('time (min)')
+title('RcdA')
 label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
 
