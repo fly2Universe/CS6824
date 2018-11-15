@@ -16,10 +16,10 @@ clear all
 % x=[0,20,40,60,80,100];
 % o=[24629.731,22150.974,20566.51,26048.681,25878.045,25939.761];
 %%%%%RcdA 150min should cut off the last three for 120min
-% x=[8.7,26.2,44.6,62,80,97,115.2,133,150];
-% o=[0.1,1,1,0.5,0.5,0.5,0.43,0.74,0.26];
-x=[8.7,26.2,44.6,62,80,97];
-o=[0.1,1,1,0.5,0.5,0.5];
+x=[8.7,26.2,44.6,62,80,97,115.2,133,150];
+o=[0.1,1,1,0.5,0.5,0.5,0.43,0.74,0.26];
+% x=[8.7,26.2,44.6,62,80,97];
+% o=[0.1,1,1,0.5,0.5,0.5];
  c = o/max(o);
 % cftool
 %x as x-axis, c as y-axis, polynomial, degree 3
@@ -69,13 +69,13 @@ o=[0.1,1,1,0.5,0.5,0.5];
        p5 =     -0.8569;
 %%%%%%%%compare experimental data with fitting curve%%%%%%%%%%%
 %x=[x,x+150,x+300,x+450];
-x=[x,x+120,x+240,x+360];
-c=[c,c];
-c=[c,c];
-scatter(x,c,'b')
+% x=[x,x+120,x+240,x+360];
+% c=[c,c];
+% c=[c,c];
+plot(x,c,'b')
 hold on;
-T=120;%period
-t1=0:1:600;
+T=150;%period
+t1=0:1:160;
   t_d=rem(t1,T); %return remainder after division t/T
   
 
@@ -83,10 +83,10 @@ t1=0:1:600;
 %pole
 % y=(p1*t_d.^3 + p2*t_d.^2 + p3*t_d + p4);
 %y = a1*sin(3*pi*t_d./180+c1)+d1;
-    y = p1*t_d.^4 + p2*t_d.^3 + p3*t_d.^2 + p4*t_d+ p5;%RcdA
-    y(y<0)=0;
-plot(t1, y)
+%     y = p1*t_d.^4 + p2*t_d.^3 + p3*t_d.^2 + p4*t_d+ p5;%RcdA
+%     y(y<0)=0;
+%  plot(t1, y)
  xlabel('time')
-ylabel('CckA~P')
-legend('experiment','simulation')
+ylabel('RcdA')
+legend('experiment')
 
