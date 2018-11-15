@@ -7,8 +7,8 @@ param(1); %cell can grow
 y0 = sw_to_early_pd.endpoints;
 y0 = y0.';
 %% INTEGRATION PARAMETERS
-t0 = 0;
-tf = 30;
+t0 = 120;
+tf = 150;
 
 options = odeset('RelTol',1e-4,'AbsTol',1e-4);
 
@@ -36,8 +36,8 @@ M=100*M;
 complex1(:,1:100)=yout(:,1:100);
 %free+bound CpdR
 CpdR(:,1:100)=yout(:,101:200)+yout(:,201:300);
-%free+bound CpdR~p
-CpdR_p(:,1:100)=yout(:,301:400)+yout(:,401:500);
+%CpdR~p
+CpdR_p(:,1:100)=yout(:,301:400);
 
 %flip array ?
 complex1 = fliplr(complex1);
@@ -57,7 +57,7 @@ pcolor(t, M, complex1)
 shading interp
 colorbar
 title('ClpXP:CpdR')
-xlim([0 30])
+xlim([120 150])
 xlabel('time (min)')
 label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
@@ -66,7 +66,7 @@ ax2 = subplot(2,2,2);
 pcolor(t, M, CpdR)
 shading interp
 colorbar
-xlim([0 30])
+xlim([120 150])
 xlabel('time (min)')
 label_str = strcat('cell size (',char(956),'m)');
 ylabel(label_str) 
@@ -76,7 +76,7 @@ ax3 = subplot(2,2,3);
 pcolor(t, M, CpdR_p)
 shading interp
 colorbar
-xlim([0 30])
+xlim([120 150])
 xlabel('time (min)')
 title('CpdR~p')
 label_str = strcat('cell size (',char(956),'m)');
