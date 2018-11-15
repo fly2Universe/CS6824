@@ -3,7 +3,7 @@
 function dydt=temp_odes(t,y)
 global p;
 
- T=120;%period of Caulobacter before division
+ T=150;%period of Caulobacter before division
  t_d=rem(t,T); %return remainder after division t/T
 %%%%DivK~P_free
 p1 =   1.315e-06 ;
@@ -35,11 +35,14 @@ p1 =   1.315e-06 ;
        q5 =     -0.8569;
        p.rcda=q1*t_d.^4 + q2*t_d.^3 + q3*t_d.^2 + q4*t_d+ q5;
 %%Complex1 (ClpXP:CpdR)
-  dydt(1)=p.k1_pos*p.clpxp*y(3)/(y(3)+p.km1)-p.k1_neg*y(1);
+  %dydt(1)=p.k1_pos*p.clpxp*(y(3)+y(2))/(y(3)+y(2)+p.km1)-p.k1_neg*y(1);
+  dydt(1)=p.k1_pos*p.clpxp*y(3)/(y(3)+p.km1)+p.k1_pos*p.clpxp*y(2)/(y(2)+p.km1)-p.k1_neg*y(1);
 
 %%CpdR_f 
-dydt(2)=p.ks_cpdr-p.kd_cpdr*y(1)*y(2)/(y(1)+p.J2)+p.k2_pos*y(4)*p.divkp_free/(p.divkp_free+p.J3)-p.k2_neg*y(2)...
-    +p.kcpdr_b_f*y(3)-p.kcpdr_f_b*y(2);
+dydt(2)=p.ks_cpdr-p.kd_cpdr*y(1)*y(2)/(y(1)+p.J2)...
+    +p.k2_pos*y(4)*p.divkp_free/(p.divkp_free+p.J3)-p.k2_neg*y(2)...
+    +p.kcpdr_b_f*y(3)-p.kcpdr_f_b*y(2)...
+    +p.k1_neg*y(1)-p.k1_pos*p.clpxp*y(2)/(y(2)+p.km1);
 
 %%CpdR_b
   dydt(3)=-p.kd_cpdr*y(1)*y(3)/(y(1)+p.J2)+p.kcpdr_f_b*y(2)-p.kcpdr_b_f*y(3)...
