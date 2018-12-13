@@ -1,8 +1,8 @@
 function initial_cond = get_init()
 %% INITIAL CONDITIONS
-y0=zeros(601,1);
+y0=zeros(901,1);
 %y0(501:700)=1;
-y0(601) = 0.013;           % cell size
+y0(901) = 0.013;           % cell size
 
 %%pass parameter
 param(0);
