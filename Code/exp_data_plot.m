@@ -28,4 +28,10 @@ figure (2)
 values = spcrv([[a(1) a a(end)];[b(1) b b(end)]],3);
 plot(values(1,:),values(2,:), 'k');
 legend('TacA')
-
+figure (3)
+  a=[8.7,26.4,44.5,62.1,80.3,97.7,115.8,133.7,151.2];
+  o=[0.82,0.62,0.19,0.04,0.39,0.71,0.91,1,0.8];
+  b=o/max(o);
+values = spcrv([[a(1) a a(end)];[b(1) b b(end)]],3);
+plot(values(1,:),values(2,:), 'k');
+legend('CtrA')
