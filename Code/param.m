@@ -11,16 +11,18 @@ p.clpxp=0.01;%um
 %% Synthesis and degradation rate constants [units --> 1/min]
 p.k1_pos=0.5; %forward reaction: ClpXP+CpdR ->Complex1
 p.k1_neg=20; %backward reaction: Complex1->ClpXP+CpdR
-p.ks_cpdr=0.02;%0.02;
+p.ks_cpdr=0.02; %0.02;
 p.kd_cpdr=1;%0.01;
 %%phosporylation
 p.k2_pos=2;%0.5;
 p.k2_neg=15;%0.8;%based on ratio of p/unp
 %%
-p.k3_pos=20;%forward reaction: complex1+RcdA ->Complex1
+p.k3_pos=100;%forward reaction: complex1+RcdA ->Complex1
 p.k3_neg=0.2;%backward reaction: complex1+RcdA
 p.ks_rcda=2.5;%0.023;
 p.kd_rcda=2;%0.017;%from Tyson lab
+p.k4_pos=10;
+p.k4_neg=5;
 %% Diffusion parameters [units --> um^2/min]
 p.D_complex1=1;
 p.D_cpdr=100;
@@ -35,6 +37,7 @@ p.J4=0.4;
 p.km1=5;
 p.J5=0.5;
 p.J6=2;
+p.km2=0.1;
 %%binding
 p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=15;
