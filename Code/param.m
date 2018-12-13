@@ -23,12 +23,19 @@ p.ks_rcda=2.5;%0.023;
 p.kd_rcda=2;%0.017;%from Tyson lab
 p.k4_pos=10;
 p.k4_neg=5;
+p.ks_cdg=0.5;
+p.kd_cdg=1.5;
+p.k5_pos=20;
+p.k5_neg=2;
 %% Diffusion parameters [units --> um^2/min]
 p.D_complex1=1;
 p.D_cpdr=100;
 p.D_cpdrp=100;
 p.D_complex2=1;
 p.D_rcda=100;
+p.D_popa2cdg=10;
+p.D_cdg=200;
+p.D_complex3=1;
 %%
 p.J1=10;
 p.J2=0.5;
@@ -38,6 +45,8 @@ p.km1=5;
 p.J5=0.5;
 p.J6=2;
 p.km2=0.1;
+p.km3=0.06;
+p.J7=0.3;
 %%binding
 p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=15;
