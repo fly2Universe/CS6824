@@ -52,5 +52,5 @@ p.kcpdr_b_f=0.1;
 p.kcpdr_f_b=15;
 p.kcpdrp_b_f=0.5;
 p.kcpdrp_f_b=1;
-p.kcdg_b_f=0.2;
-p.kcdg_f_b=20;
+p.kcdg_b_f=0;
+p.kcdg_f_b=0;
