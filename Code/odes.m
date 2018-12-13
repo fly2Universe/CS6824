@@ -112,11 +112,14 @@ end
 
 %%model3
 %%PopA:2cdG
-dydt(601)=p.k4_pos*(y(601+100)^2+y(601+200)^2)+2*p.k4_neg*y(601)+p.D_popa2cdg*(y(601+1)-y(601))/(y(1101)^2);
+dydt(601)=p.k4_pos*(y(601+100)^2+y(601+200)^2)...
+    -2*p.k4_neg*y(601)+p.D_popa2cdg*(y(601+1)-y(601))/(y(1101)^2);
 for  v6=602:699
-    dydt(v6)=p.k4_pos*(y(v6+100)^2+y(v6+200)^2)+2*p.k4_neg*y(v6)+p.D_popa2cdg*(y(v6+1)-2*y(v6)+y(v6-1))/(y(1101)^2);
+    dydt(v6)=p.k4_pos*(y(v6+100)^2+y(v6+200)^2)...
+        -2*p.k4_neg*y(v6)+p.D_popa2cdg*(y(v6+1)-2*y(v6)+y(v6-1))/(y(1101)^2);
 end
-dydt(700)=p.k4_pos*(y(700+100)^2+y(v6+200)^2)+2*p.k4_neg*y(700)+p.D_popa2cdg*(y(699)-y(700))/(y(1101)^2);
+dydt(700)=p.k4_pos*(y(700+100)^2+y(v6+200)^2)...
+    -2*p.k4_neg*y(700)+p.D_popa2cdg*(y(699)-y(700))/(y(1101)^2);
 
 %%cdG_f
 dydt(701)=p.ks_cdg*p.pled*p.J7^2/(p.J7^2+y(701)^2)-p.kd_cdg*p.pdea*y(701)/(y(701)+p.km3)...
