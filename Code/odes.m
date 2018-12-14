@@ -140,11 +140,11 @@ end
 %%%cdG sticky
 dydt(901:1000)=0;
 %%Complex3
-dydt(1001)=p.k5_pos*y(1001)*y(1001-400)-p.k5_neg*y(1001)+p.D_complex3*(y(1001+1)-y(1001))/(y(1101)^2);
+dydt(1001)=p.k5_pos*y(1001-500)*y(1001-400)-p.k5_neg*y(1001)+p.D_complex3*(y(1001+1)-y(1001))/(y(1101)^2);
 for v10=1002:1099
-    dydt(v10)=p.k5_pos*y(v10)*y(v10-400)-p.k5_neg*y(v10)++p.D_complex3*(y(v10+1)-2*y(v10)+y(v10-1))/(y(1101)^2);
+    dydt(v10)=p.k5_pos*y(v10-500)*y(v10-400)-p.k5_neg*y(v10)++p.D_complex3*(y(v10+1)-2*y(v10)+y(v10-1))/(y(1101)^2);
 end
-dydt(1100)=p.k5_pos*y(1100)*y(1100-200)-p.k5_neg*y(1100)+p.D_complex3*(y(1099)-y(1100))/(y(1101)^2);
+dydt(1100)=p.k5_pos*y(1100-500)*y(1100-200)-p.k5_neg*y(1100)+p.D_complex3*(y(1099)-y(1100))/(y(1101)^2);
 %%%%%%%%%%%%%%%%%%%%%%
 dydt(1101)=p.growth*y(1101);
 %%%%
