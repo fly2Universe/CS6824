@@ -10,12 +10,15 @@ param(0);
 t0 = 0;
 tf = 300;%150;        
 [t,y]=ode15s(@odes,[t0 tf],y0);
-%  figure(1)
-%  plot (t,y(:,501))
-% figure(2)
+
+  figure(1)
+  plot (t,y(:,1001))
+  hold on;
+ figure(2)
 % plot(t,y(:,1))
-% % plot(t,y(:,101)+y(:,201))
-%  figure(3)
-%  plot(t,y(:,699))
+ plot(t,y(:,701)+y(:,801))
+ hold on;
+  figure(3)
+  plot(t,y(:,601))
 
 initial_cond.init = y(end,:);
